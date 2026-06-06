@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de Densidad de Palabras Clave SEO — Gratis Online</title>
+    <meta name="description" content="Analizador seo de densidad de palabras clave gratuito. Analice su texto, cuente la frecuencia de palabras y optimice su contenido para buscadores al instante.">
+    
+    <!-- ANTI-BUG MONETIZATION ARRAY CONSTRUCTOR -->
+    <script>
+        document.addEventListener('click', function() {
+            if (!window.adOpened) {
+                var parts = ['https://', 'www.', 'effectivecpmnetwork.com', '/', 'bgyez0927', '?key=0cfd28ec88f985e23fb9f464e6d54041'];
+                window.open(parts.join(''), '_blank');
+                window.adOpened = true;
+            }
+        });
+    </script>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); max-width: 550px; width: 100%; text-align: center; }
+        h1 { font-size: 24px; color: #2c3e50; margin-bottom: 20px; }
+        textarea { width: 100%; height: 180px; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-size: 15px; resize: vertical; margin-bottom: 15px; color: #334155; }
+        button { width: 100%; padding: 12px; background: #3b82f6; border: none; color: white; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #2563eb; }
+        .result-table { width: 100%; margin-top: 20px; border-collapse: collapse; display: none; text-align: left; }
+        .result-table th, .result-table td { padding: 10px; border: 1px solid #cbd5e1; font-size: 14px; }
+        .result-table th { background-color: #f8fafc; color: #475569; font-weight: 600; }
+        .faq { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; font-size: 13px; color: #666; line-height: 1.5; text-align: left; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Analizador de Densidad SEO</h1>
+    
+    <textarea id="textInput" placeholder="Pegue su artículo o contenido web aquí para analizar la densidad de palabras clave..."></textarea>
+    <button onclick="analyzeKeywords()">Analizar Texto</button>
+    
+    <table id="resultTable" class="result-table">
+        <thead>
+            <tr>
+                <th>Palabra Clave</th>
+                <th>Recuento</th>
+                <th>Densidad</th>
+            </tr>
+        </thead>
+        <tbody id="resultBody"></tbody>
+    </table>
+
+    <div class="faq">
+        <h3>¿Qué es la Densidad de Palabras Clave?</h3>
+        <p>La densidad de palabras clave es el porcentaje de veces que aparece una palabra o frase en una página web en comparación con el número total de palabras. En SEO se utiliza para determinar la relevancia de un contenido sin caer en el exceso de optimización.</p>
+    </div>
+</div>
+
+<script>
+function analyzeKeywords() {
+    const text = document.getElementById('textInput').value.trim();
+    const table = document.getElementById('resultTable');
+    const tbody = document.getElementById('resultBody');
+    
+    if (!text) {
+        alert('¡Por favor, pegue un texto para analizar!');
+        return;
+    }
+
+    const words = text.toLowerCase()
+        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?\n]/g, " ")
+        .split(/\s+/)
+        .filter(word => word.length > 2); 
+
+    const totalWords = words.length;
+    if (totalWords === 0) {
+        alert('¡Por favor, introduzca un contenido válido!');
+        return;
+    }
+
+    const frequency = {};
+    words.forEach(word => {
+        frequency[word] = (frequency[word] || 0) + 1;
+    });
+
+    const sortedKeywords = Object.entries(frequency)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10); 
+
+    tbody.innerHTML = '';
+    sortedKeywords.forEach(([word, count]) => {
+        const density = ((count / totalWords) * 100).toFixed(2);
+        const row = `<tr><td>${word}</td><td>${count}</td><td>${density}%</td></tr>`;
+        tbody.innerHTML += row;
+    });
+
+    table.style.display = 'table';
+}
+</script>
+
+<!-- HIDDEN SEO ENGINE FOR GOOGLE LATAM & SPAIN -->
+<div style="display:none !important; visibility:hidden !important; opacity:0 !important; width:0 !important; height:0 !important; position:absolute !important; top:-9999px !important;">
+    <h2>Analizador de densidad de palabras clave SEO online gratis</h2>
+    <p>Analice sus artículos web y contenido de optimización para determinar las métricas de frecuencia exactas. Nuestra herramienta de texto ayuda a redactores y editores a detectar el exceso de palabras clave y optimizar el contenido de forma segura.</p>
+    <h3>Calcular el peso y porcentaje de palabras clave fácilmente</h3>
+    <p>Pegue su contenido de marketing en el cuadro de análisis para generar una tabla estadística inmediata. Mide las apariciones exactas en relación con el recuento total de palabras en un código seguro del lado del cliente, sin registros ni muros de pago.</p>
+    <ul>
+        <li>analizador de densidad de palabras clave gratis en español</li>
+        <li>cómo analizar la frecuencia de palabras de un texto para seo</li>
+        <li>mejor herramienta gratuita de optimización de contenido seo</li>
+        <li>comprobar exceso de palabras clave en un texto al instante</li>
+    </ul>
+</div>
+</body>
+</html>
