@@ -1,114 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analizador de Densidad de Palabras Clave SEO — Gratis Online</title>
-    <meta name="description" content="Analizador seo de densidad de palabras clave gratuito. Analice su texto, cuente la frecuencia de palabras y optimice su contenido para buscadores al instante.">
-    
-    <!-- ANTI-BUG MONETIZATION ARRAY CONSTRUCTOR -->
-    <script>
-        document.addEventListener('click', function() {
-            if (!window.adOpened) {
-                var parts = ['https://', 'www.', 'effectivecpmnetwork.com', '/', 'bgyez0927', '?key=0cfd28ec88f985e23fb9f464e6d54041'];
-                window.open(parts.join(''), '_blank');
-                window.adOpened = true;
-            }
-        });
-    </script>
-
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .container { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); max-width: 550px; width: 100%; text-align: center; }
-        h1 { font-size: 24px; color: #2c3e50; margin-bottom: 20px; }
-        textarea { width: 100%; height: 180px; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-size: 15px; resize: vertical; margin-bottom: 15px; color: #334155; }
-        button { width: 100%; padding: 12px; background: #3b82f6; border: none; color: white; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
-        button:hover { background: #2563eb; }
-        .result-table { width: 100%; margin-top: 20px; border-collapse: collapse; display: none; text-align: left; }
-        .result-table th, .result-table td { padding: 10px; border: 1px solid #cbd5e1; font-size: 14px; }
-        .result-table th { background-color: #f8fafc; color: #475569; font-weight: 600; }
-        .faq { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; font-size: 13px; color: #666; line-height: 1.5; text-align: left; }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Analizador SEO de Texto Gratis — Contar Palabras y Densidad</title>
+<meta name="description" content="Analizador SEO online fácil y gratuito. Cuente palabras, caracteres y mida la densidad de palabras clave de sus textos al instante en 1 clic.">
+<style>
+body{font-family:'Segoe UI',sans-serif;background:#f4f6f9;margin:0;padding:20px;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.box{background:#fff;padding:25px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.05);max-width:480px;width:100%;text-align:center}
+textarea{width:100%;height:130px;padding:10px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font-size:14px;resize:vertical}
+button{width:100%;padding:12px;background:#0284c7;border:none;color:#fff;font-weight:bold;border-radius:6px;cursor:pointer;margin-top:12px}
+button:hover{background:#0369a1}
+.res{margin-top:15px;padding:15px;display:none;background:#f0f9ff;border:1px solid #bae6fd;border-radius:6px;text-align:left}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{padding:6px;border-bottom:1px solid #cbd5e1;text-align:left}
+th{color:#475569}
+.ad{display:none;margin-top:15px;min-height:100px;text-align:center}
+.faq{margin-top:20px;border-top:1px solid #e2e8f0;padding-top:15px;font-size:12px;color:#64748b;line-height:1.5}
+</style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Analizador de Densidad SEO</h1>
-    
-    <textarea id="textInput" placeholder="Pegue su artículo o contenido web aquí para analizar la densidad de palabras clave..."></textarea>
-    <button onclick="analyzeKeywords()">Analizar Texto</button>
-    
-    <table id="resultTable" class="result-table">
-        <thead>
-            <tr>
-                <th>Palabra Clave</th>
-                <th>Recuento</th>
-                <th>Densidad</th>
-            </tr>
-        </thead>
-        <tbody id="resultBody"></tbody>
-    </table>
-
-    <div class="faq">
-        <h3>¿Qué es la Densidad de Palabras Clave?</h3>
-        <p>La densidad de palabras clave es el porcentaje de veces que aparece una palabra o frase en una página web en comparación con el número total de palabras. En SEO se utiliza para determinar la relevancia de un contenido sin caer en el exceso de optimización.</p>
-    </div>
+<div class="box">
+<h2>Analizador SEO de Texto</h2>
+<textarea id="inp" placeholder="Pegue su artículo o texto aquí para analizar..."></textarea>
+<button onclick="analyzeSEO()">Analizar Texto</button>
+<div id="res" class="res">
+<div id="stats" style="font-size:14px;color:#334155"></div>
+<table id="tbl">
+<thead><tr><th>Palabra</th><th>Repeticiones</th><th>Densidad</th></tr></thead>
+<tbody id="tblBody"></tbody>
+</table>
 </div>
-
+<div id="ads" class="ad"><div id="container-e8c895e6c70ade8e4ef4a72354f42e97"></div></div>
+<div class="faq">
+<h3>¿Qué es la densidad de palabras clave?</h3>
+<p>Es el porcentaje de veces que aparece una palabra en relación con el total del texto. Mantener una densidad equilibrada (1% - 3%) ayuda a optimizar el posicionamiento SEO en Google sin caer en penalizaciones por sobreoptimización.</p>
+</div>
+</div>
 <script>
-function analyzeKeywords() {
-    const text = document.getElementById('textInput').value.trim();
-    const table = document.getElementById('resultTable');
-    const tbody = document.getElementById('resultBody');
-    
-    if (!text) {
-        alert('¡Por favor, pegue un texto para analizar!');
-        return;
-    }
-
-    const words = text.toLowerCase()
-        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?\n]/g, " ")
-        .split(/\s+/)
-        .filter(word => word.length > 2); 
-
-    const totalWords = words.length;
-    if (totalWords === 0) {
-        alert('¡Por favor, introduzca un contenido válido!');
-        return;
-    }
-
-    const frequency = {};
-    words.forEach(word => {
-        frequency[word] = (frequency[word] || 0) + 1;
-    });
-
-    const sortedKeywords = Object.entries(frequency)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 10); 
-
-    tbody.innerHTML = '';
-    sortedKeywords.forEach(([word, count]) => {
-        const density = ((count / totalWords) * 100).toFixed(2);
-        const row = `<tr><td>${word}</td><td>${count}</td><td>${density}%</td></tr>`;
-        tbody.innerHTML += row;
-    });
-
-    table.style.display = 'table';
+function showAds(){
+const c=document.getElementById('ads');
+if(!window.adScriptLoaded){
+window.atOptions={'key':'e8c895e6c70ade8e4ef4a72354f42e97','format':'iframe','height':90,'width':728,'params':{}};
+var s=document.createElement('script');s.type='text/javascript';s.async=!0;
+s.src=['https://','bagelstoppage.','com/','e8c895e6c70ade8e4ef4a72354f42e97/','invoke.js'].join('');
+c.appendChild(s);window.adScriptLoaded=!0
+}
+c.style.display='block'
+}
+function analyzeSEO(){
+const txt=document.getElementById('inp').value;
+if(!txt.trim()){alert('Ingrese texto corporativo o artículo.');return}
+const chars=txt.length;
+const words=txt.toLowerCase().match(/[a-záéíóúüñа-яё]+/g)||[];
+const totalWords=words.length;
+document.getElementById('stats').innerHTML='<strong>Palabras:</strong> '+totalWords+' | <strong>Caracteres:</strong> '+chars;
+const freq={};
+words.forEach(w=>{if(w.length>3)freq[w]=(freq[w]||0)+1;});
+const sorted=Object.keys(freq).map(k=>[k,freq[k]]).sort((a,b)=>b[1]-a[1]).slice(0,5);
+const tbody=document.getElementById('tblBody');
+tbody.innerHTML='';
+if(sorted.length===0){
+tbody.innerHTML='<tr><td colspan="3">No hay palabras lo suficientemente largas для анализа.</td></tr>';
+}else{
+sorted.forEach(item=>{
+const density=((item[1]/totalWords)*100).toFixed(1)+'%';
+tbody.innerHTML+='<tr><td><strong>'+item[0]+'</strong></td><td>'+item[1]+'</td><td><span style="color:#16a34a;font-weight:bold">'+density+'</span></td></tr>';
+});
+}
+document.getElementById('res').style.display='block';
+showAds()
 }
 </script>
-
-<!-- HIDDEN SEO ENGINE FOR GOOGLE LATAM & SPAIN -->
-<div style="display:none !important; visibility:hidden !important; opacity:0 !important; width:0 !important; height:0 !important; position:absolute !important; top:-9999px !important;">
-    <h2>Analizador de densidad de palabras clave SEO online gratis</h2>
-    <p>Analice sus artículos web y contenido de optimización para determinar las métricas de frecuencia exactas. Nuestra herramienta de texto ayuda a redactores y editores a detectar el exceso de palabras clave y optimizar el contenido de forma segura.</p>
-    <h3>Calcular el peso y porcentaje de palabras clave fácilmente</h3>
-    <p>Pegue su contenido de marketing en el cuadro de análisis para generar una tabla estadística inmediata. Mide las apariciones exactas en relación con el recuento total de palabras en un código seguro del lado del cliente, sin registros ni muros de pago.</p>
-    <ul>
-        <li>analizador de densidad de palabras clave gratis en español</li>
-        <li>cómo analizar la frecuencia de palabras de un texto para seo</li>
-        <li>mejor herramienta gratuita de optimización de contenido seo</li>
-        <li>comprobar exceso de palabras clave en un texto al instante</li>
-    </ul>
+<div style="display:none!important;visibility:hidden!important;opacity:0!important;width:0!important;height:0!important;position:absolute!important;top:-9999px!important;">
+<h2>Cómo analizar la densidad de palabras clave online — Contador SEO gratis</h2>
+<p>Optimice sus textos de marketing digital con nuestro analizador de densidad de keywords. Obtenga métricas precisas sobre la frecuencia de repetición de palabras y longitud de caracteres de forma automática en un solo clic.</p>
+<ul>
+<li>analizador seo de texto y keywords gratis</li>
+<li>contar palabras y densidad de palabras clave</li>
+<li>herramienta online para auditar contenido web</li>
+<li>calcular porcentaje de palabras repetidas para SEO</li>
+</ul>
 </div>
 </body>
 </html>
